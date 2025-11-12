@@ -3,7 +3,7 @@ from funciones import mostrar_tablero
 from variables import TAMANO
 import random
 
-print("🚢 Bienvenido a Hundir la Flota 🚢")
+print(" Bienvenido a Hundir la Flota ")
 
 # Inicializar tableros
 jugador = Tablero("Jugador")
