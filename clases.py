@@ -1,6 +1,6 @@
 import numpy as np
 import random
-from variables import *
+from variables import lista_barcos
 #TABLERO
 
 class Tablero :
@@ -20,8 +20,8 @@ class Tablero :
         self.tablero_mascara_maquina = np.full((self.filas, self.columnas), self.agua)
         return self.tablero
     
-    def coloca_barco(self, barco):
-        """Coloca un barco si es válido. Devuelve tablero o False."""
+    def coloca_barco(self, barco):# verifica que se puede poner el barco en el tablero
+        
         tablero_temp = self.tablero.copy()
 
         for fila, columna in barco:
@@ -37,7 +37,7 @@ class Tablero :
         return self.tablero
 
 
-    def recibir_disparos_maquina(self, tablero ):
+    def recibir_disparos_maquina(self, tablero ):  #dispara la maquina
         fila = random.randint(0, self.filas - 1)
         columna = random.randint(0, self.columnas - 1)
 
@@ -57,9 +57,9 @@ class Tablero :
             return False
 
 
-        #print("\ndisparos maquina\n", tablero.tablero_jugador)    
+        
 
-    def recibir_disparo(self, tablero):
+    def recibir_disparo(self, tablero):  #dispara el jugador
         fila = int(input("Dime la fila: "))
         columna = int(input("Dime la columna: "))
 
@@ -91,7 +91,7 @@ class Barco:
         self.id_jugador = id_jugador
 
     def crea_barco_aleatorio(self, tablero, num_intentos=100):
-        """Genera posiciones válidas y coloca el barco."""
+        
 
         for intento in range(num_intentos):
 
@@ -104,7 +104,7 @@ class Barco:
             fila, col = fila_ini, col_ini
 
             barco.append((fila, col))
-
+#el random elige la direccion del barco 
             for _ in range(self.eslora - 1):
 
                 if orientacion == "N":
@@ -128,7 +128,7 @@ class Barco:
         #print("No se pudo colocar el barco tras muchos intentos.")
         return False
 
-
+#estos for ubica los barcos en los tableros
 for nombre, tamaño in lista_barcos.items():
     barco = Barco(nombre, tamaño, "jugador")
     barco.crea_barco_aleatorio(tablero_jugador)

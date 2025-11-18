@@ -1,6 +1,6 @@
 import numpy as np
 import random 
-from clases import *
+
 
 lista_barcos = {
     "lancha1": 1,
@@ -15,3 +15,4 @@ lista_barcos = {
     "acorazado": 4
 }
 
+turno = "jugador"

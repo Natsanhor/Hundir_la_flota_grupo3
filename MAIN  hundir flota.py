@@ -10,10 +10,12 @@ from variables import *
 
 # Main 
 
-turno = "jugador"
+#turno = "jugador"
 
-print("Hola va a comenzar el juego hundir la flota")
-print("derrota a la maquina hundiendo todos sus barcos")
+print("Hola, va a comenzar el juego hundir la flota.")
+print(" ")
+print("Derrota a la maquina hundiendo todos sus barcos,\nla maquina y tu teneis 20 vidas cada uno, \n si se acierta se vuelve a disparar")
+print(" ")
 print("Tablero jugador:\n ", tablero_jugador.tablero)
 
 while tablero_jugador.vidas > 0 and tablero_maquina.vidas > 0:
